@@ -1,24 +1,39 @@
 import pickle
 import sys
+import random
 import regex as re
 
-filename = "input.txt"
-n = 3 #default
 
-argc = len(sys.argv)
-if (argc > 1):
-    filename = sys.argv[1]
+def train_n_gram(corpus, n):
+    if (n <= 0):
+        raise Exception("Invalid n value" + str(n))
 
-if (argc > 2):
-    if (sys.argv[2].isdigit()):
-        n = int(sys.argv[2])
-    else:
-        raise Exception("Invalid n value.")
+    model = dict()
+    
+    for i in range(len(corpus)):
+        if (i < n):
+            continue
+        prev_words = tuple(corpus[i-n:i])
+        if (model.get(prev_words) == None):
+            model[prev_words] = []
+        model[prev_words].append(corpus[i])
 
-f = open(filename, 'r')
-corpus = f.read()
+    return model
 
-corpus = re.replace(" ^[\s]*^[a-zA-Z\-]+^[\s]* ", " ", corpus)
-words = corpus.split(' ')
+def get_next_word(prev_words, model):
+    if (type(prev_words) != tuple):
+        prev_words = tuple(prev_words)
+    
+    if (model.get(prev_words) == None):
+        return None
+    
+    possible_words = model[prev_words]
+    random_index = random.randint(0, len(possible_words)-1)
+    random_word = possible_words[random_index]
+
+    return random_word
+
+
+
 
 
