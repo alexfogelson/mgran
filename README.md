@@ -3,7 +3,7 @@ So I should be doing homework, but I've kinda wanted to see how easy it is to ma
 
 ## Who to model?
 
-Trump's been done a thousand times, anything serious isn't worth doing for this project. So I picked the most mimicable, most memeable, most obnoxious robot I could create. The one true arbiter of facts and logic, of course. Ben Shapiro. 
+Trump's been done a thousand times, anything serious isn't worth doing for this project. So I picked the most mimicable, most memeable robot I could create. The one true arbiter of facts and logic, of course. Ben Shapiro. 
 
 ### Data
 A site called Podgist does really great work in transcribing podcasts. Worth checking out. I grabbed some of the free transcripts from them, although I haven't included them in this repo. Just a sample of what they outputed :)
