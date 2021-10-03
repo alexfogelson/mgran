@@ -13,4 +13,4 @@ A site called Podgist does really great work in transcribing podcasts. Worth che
 This uses multiple n-gram models. It will attempt to find a match with the largest number given, but models are also trained for lower n, just in case we've dug ourselves into a hole with the initial seed.
 Also, there is some padding wiggle room, where the model thinks it has found nothing depsite an answer being derivable from history. This is intentional (and alterable), so that we don't simply use the highest n model at all times.
 
-### This isn't a political statement. You can love or hate the man. But you cannot deny that his cadence is hilarious. 
+### This isn't a political statement. You can love or hate the man. But you cannot deny that his cadence is hilarious and (respectfully) quite mockable.
