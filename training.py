@@ -4,7 +4,7 @@ import random
 import regex as re
 
 
-def train_n_gram(corpus, n):
+def train_n_gram(corpus, n, padding = .05):
     if (n <= 0):
         raise Exception("Invalid n value" + str(n))
 
@@ -17,6 +17,13 @@ def train_n_gram(corpus, n):
         if (model.get(prev_words) == None):
             model[prev_words] = []
         model[prev_words].append(corpus[i])
+    
+    for key in model:
+        value = model[key]
+        for i in range(int(len(value)*padding)):
+            value.append(None)
+        
+        model[key] = value
 
     return model
 
