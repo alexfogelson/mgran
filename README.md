@@ -1,7 +1,7 @@
 # mgran
 So I should be doing homework, but I've kinda wanted to see how easy it is to make an n-gram model.
 
-##Who to model?
+## Who to model?
 
 Trump's been done a thousand times, anything serious isn't worth doing for this project. So I picked the most mimicable, most memeable, most obnoxious robot I could create. The one true arbiter of facts and logic, of course. Ben Shapiro. 
 
