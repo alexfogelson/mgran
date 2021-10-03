@@ -1,0 +1,39 @@
+import pickle
+import sys
+import random
+import regex as re
+
+
+def train_n_gram(corpus, n):
+    if (n <= 0):
+        raise Exception("Invalid n value" + str(n))
+
+    model = dict()
+    
+    for i in range(len(corpus)):
+        if (i < n):
+            continue
+        prev_words = tuple(corpus[i-n:i])
+        if (model.get(prev_words) == None):
+            model[prev_words] = []
+        model[prev_words].append(corpus[i])
+
+    return model
+
+def get_next_word(prev_words, model):
+    if (type(prev_words) != tuple):
+        prev_words = tuple(prev_words)
+    
+    if (model.get(prev_words) == None):
+        return None
+    
+    possible_words = model[prev_words]
+    random_index = random.randint(0, len(possible_words)-1)
+    random_word = possible_words[random_index]
+
+    return random_word
+
+
+
+
+
